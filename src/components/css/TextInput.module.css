@@ -1,0 +1,25 @@
+/* TextInput.module.css */
+.inputContainer {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%; /* Ensure the container takes up full width */
+  }
+  
+  .row {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    gap: 10px; /* Space between label and input field */
+  }
+  
+  .label {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .inputField {
+    flex: 1; /* Allow text field to take up available space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
