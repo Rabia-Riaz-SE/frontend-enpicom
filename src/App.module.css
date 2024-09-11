@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the two components */
+  padding: 5% 23% /* Padding inside the container */
+}
+
+.block {
+  border: 1px solid #ddd; /* Border around each component */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside each block */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+}
