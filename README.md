@@ -17,8 +17,8 @@ This repository contains the frontend service for the Enpicom project, built wit
 - **`Dockerfile`**: Defines the Docker image for the frontend application.
 - **`docker-compose.yml`**: Sets up multiple services (frontend, backend, PostgreSQL, and PgAdmin), useful for development and testing environments.
 - **`src/`**:
-  - **`components/`**: Contains reusable React components such as `TextInput.tsx` and `Button.tsx`.
-  - **`pages/`**: Contains page-level components such as `AddDNA.tsx` and `SearchDNA.tsx`.
+  - **`components/`**: Contains reusable React components such as `TextInput.tsx` and `Button.tsx`along their css and test files.
+  - **`pages/`**: Contains page-level components such as `AddDNA.tsx` and `SearchDNA.tsx` along their css and test files.
   - **`assets/`**: Includes static assets like images and icons used across the application.
   - **`styles/`**: Contains global and component-specific CSS modules.
   - **`App.tsx`**: The main application component that consolidates routing and layout.
@@ -91,15 +91,12 @@ $ npm run dev
 $ npm run preview
 ```
 
-<!-- ## Run tests
+## Run tests
 
 ```bash
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
-``` -->
+```
