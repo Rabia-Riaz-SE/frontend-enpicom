@@ -20,7 +20,7 @@ const SearchDNA: React.FC = () => {
   const api = DNABackendBaseURL;
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => { 
-    setSearch(event.target.value);
+    setSearch(event.target.value.toUpperCase);
    };
 
   const handleLevenshteinChange = (event: React.ChangeEvent<HTMLInputElement>) => { 
