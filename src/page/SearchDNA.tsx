@@ -7,7 +7,7 @@ import IDisplayDNAProps from '../interface/IDisplayDNA';
 import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 import Utils from '../utils'
-import { searchDNADefaultErrorMessage , DNABackendBaseURL} from '../constants'
+import { searchDNADefaultErrorMessage , DNABackendBaseURL, searchDNAButton, searchDNATextInput, levenshteinDNATextInput } from '../constants'
 
 
 const SearchDNA: React.FC = () => {
@@ -19,60 +19,60 @@ const SearchDNA: React.FC = () => {
 
   const api = DNABackendBaseURL;
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => { 
     setSearch(event.target.value);
-  };
+   };
 
-  const handleLevenshteinChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLevenshteinChange = (event: React.ChangeEvent<HTMLInputElement>) => { 
     setLevenshtein(event.target.value);
-  };
+   };
 
-  const handleSubmit = () => {
+  const handleSubmit = () => { 
     getDNARecord();
-  };
+   };
 
   const getDNARecord = async() => 
-  {
-    try{
+  { 
+    try{ 
       const apiQuery = `${api}?${search ? `search=${search}` : ''}${search && levenshtein ? '&' : ''}${levenshtein ? `levenshtein=${levenshtein}` : ''}`;
       const res = await axios.get(apiQuery);
       setDNAList(res.data); 
       setHasFetched(true)
       
-    }catch(err){
+     }catch(err){ 
 
       const displayErrorMessage = Utils.ExtractErrorMessage(err as AxiosError)
       toast.error(displayErrorMessage || searchDNADefaultErrorMessage);
-    }
-  }
+     }
+   }
 
   return (
     <>
-    <div className={styles.container}>
-      <div className={styles.inputGroup}>
+    <div className = { styles.container }>
+      <div className = { styles.inputGroup }>
         <TextInput 
-          placeholder='Enter DNA sequence to search' 
-          onChange={handleSearchChange} 
-          name="DNA Search" 
-          value={search} 
+          placeholder = {searchDNATextInput.placeholder}
+          onChange = { handleSearchChange } 
+          name = {searchDNATextInput.name}
+          value = { search } 
         />
         <TextInput 
-          placeholder='Enter Levenshtein distance' 
-          onChange={handleLevenshteinChange} 
-          name="Levenshtein  " 
-          value={levenshtein} 
+          placeholder = {levenshteinDNATextInput.placeholder}
+          onChange = { handleLevenshteinChange } 
+          name = { levenshteinDNATextInput.name  } 
+          value = { levenshtein  } 
         />
       </div>
-      <div className={styles.buttonWrapper}>
+      <div className = { styles.buttonWrapper }>
         <Button 
-          onClick={handleSubmit} 
-          text="Search"
+          onClick = { handleSubmit  } 
+          text = { searchDNAButton.text }
         />
       </div>
     </div>
-      {hasFetched ? (<DisplayDNAList DNAList={DNAList} /> ): ""}
+      { hasFetched ? (<DisplayDNAList DNAList = { DNAList } /> ): "" }
     </>    
   );
-}
+ }
 
 export default SearchDNA;

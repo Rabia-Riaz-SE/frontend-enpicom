@@ -4,7 +4,7 @@ import Button from '../components/button';
 import styles from './css/common.module.css'; // Import the CSS module
 import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
-import {addDNADefaultErrorMessage , addDNADefaultSuccessMessage, DNABackendBaseURL} from '../constants'
+import {addDNADefaultErrorMessage , addDNADefaultSuccessMessage, DNABackendBaseURL, addDNATextInput, addDNATextInputError, addDNAButton} from '../constants'
 import Utils from '../utils'
 
 const AddDNA: React.FC = () => {
@@ -15,7 +15,7 @@ const AddDNA: React.FC = () => {
     setDna(event.target.value.toUpperCase());
   };
 
-  const saveDNA = async(dna: string) => {
+  const saveDNA = async( dna: string ) => {
     try{
       const res = await axios.post(api, { DNA: dna}) ; 
       toast.success(`${res.data.DNA} ${addDNADefaultSuccessMessage}`)
@@ -31,26 +31,26 @@ const AddDNA: React.FC = () => {
 
   const handleSubmit = () => {
     if (!dna) {
-      toast.error('DNA cannot be empty');
+      toast.error(addDNATextInputError.empty as string);
       return;
     } 
     saveDNA(dna);
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.inputGroup}>
+    <div className = { styles.container }>
+      <div className = { styles.inputGroup }>
         <TextInput 
-          placeholder='Enter DNA' 
-          onChange={handleChange} 
-          name="DNA" 
-          value={dna} 
+          placeholder = { addDNATextInput.placeholder }
+          onChange ={ handleChange } 
+          name = { addDNATextInput.name } 
+          value = { dna } 
         />
       </div>
-      <div className={styles.buttonWrapper}>
+      <div className = { styles.buttonWrapper }>
         <Button 
-          onClick={handleSubmit} 
-          text="ADD"
+          onClick = { handleSubmit } 
+          text = { addDNAButton.text }
         />
       </div>
     </div>
