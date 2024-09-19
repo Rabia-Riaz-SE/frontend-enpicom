@@ -11,6 +11,7 @@ This repository contains the frontend service for the Enpicom project, built wit
   - [Setting Up the Environment](#setting-up-the-environment)
 - [Running the Application](#running-the-application)
 - [Testing](#testing)
+- [Format](#run-prettier-for-file-format)
 
 ### Project Structure
 
@@ -99,4 +100,12 @@ $ npm run test
 
 # test coverage
 $ npm run test:cov
+```
+
+## Run Prettier (For file format)
+
+```bash
+
+$ npm run pretty
+
 ```
