@@ -1,7 +1,6 @@
-import AddDNA from './page/AddDNA.tsx';
-import SearchDNA from './page/SearchDNA.tsx';
-import styles from './App.module.css'
-
+import AddDNA from "./page/AddDNA.tsx";
+import SearchDNA from "./page/SearchDNA.tsx";
+import styles from "./App.module.css";
 
 function App() {
   return (
