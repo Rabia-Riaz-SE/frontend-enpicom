@@ -1,7 +1,9 @@
-import ITextFieldProps from '../interface/ITextField';
-import styles from './css/TextInput.module.css'; // Import the CSS module
+import ITextFieldProps from "../interface/ITextField";
+import styles from "./css/TextInput.module.css"; // Import the CSS module
 
-const TextInput: React.FC<ITextFieldProps> = (textFieldProps: ITextFieldProps) => {
+const TextInput: React.FC<ITextFieldProps> = (
+  textFieldProps: ITextFieldProps,
+) => {
   const { name, value, onChange, placeholder } = textFieldProps;
 
   return (

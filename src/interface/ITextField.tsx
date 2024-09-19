@@ -3,5 +3,5 @@ export default interface ITextFieldProps {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
-  error?:string
+  error?: string;
 }
